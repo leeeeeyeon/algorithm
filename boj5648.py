@@ -1,10 +1,20 @@
-n = int(input())
+count = 0
 arr = []
-for _ in range(n):
-    input_data = input().split() 
-    arr.append((int(input_data[0]), input_data[1]))
 
-arr.sort(key=lambda a: a[0])
+a = list(map(int, input().split()))
+for elem in a:
+    arr.append(elem)
+count += len(a)-1
 
-for i in range(len(arr)):
-    print(arr[i][0],arr[i][1])
+while count < a[0]:
+    b = list(map(int, input().split()))
+    for elem in b:
+        arr.append(elem)
+    count += len(b)
+
+arr = arr[1:]
+arr = [int(str(x)[::-1]) for x in arr]
+arr.sort()
+
+for elem in arr:
+    print(elem)
