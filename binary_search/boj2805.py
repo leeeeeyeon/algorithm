@@ -1,4 +1,27 @@
 # 내 코드
+import sys
+n, m = map(int, sys.stdin.readline().rstrip().split())
+
+trees = list(map(int, sys.stdin.readline().rstrip().split()))
+start = 0
+end = max(trees)
+
+result = 0
+while start <= end:
+    total = 0
+    mid = (start + end) // 2
+    for tree in trees:
+        if tree > mid:
+            total += tree - mid
+    
+    if total < m:
+        end = mid - 1
+    
+    else: # total > m
+        result = mid
+        start = mid + 1
+
+print(result)
 
 # 다른 사람 코드
 
@@ -22,3 +45,8 @@
 # print(end)
 
 # 피드백
+# - max()를 사용하면 되므로 정렬은 안해줘도 된다!
+# - 최대한 덜 잘랐을 때가 정답이므로 else문에서 result 저장
+# - 파라메트릭 서치: 최적화 문제를 결정 문제로 바꾸어 해결하는 기법
+#     - 원하는 조건을 만족하는 가장 알맞은 값을 찾는 문제
+#     - 이러한 유형은 재귀적으로 구현하는 것보다 반복문을 이용해 구현하면 더 간결하게 문제를 풀 수 있다.
