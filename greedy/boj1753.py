@@ -1,9 +1,8 @@
 # 내 코드
 import heapq
 import sys
-from turtle import distance
 input = sys.stdin.readline
-INF = 1e9
+INF = int(1e9)
 
 v, e = map(int, input().split()) # 정점의 개수 v와 간선의 개수 e
 k = int(input()) # 시작 노드
@@ -15,8 +14,6 @@ distance = [INF] * (v+1)
 for i in range(e):
     a, b, c = map(int, input().split()) # a부터 b까지 가는 가중치 c
     graph[a].append((b, c))
-
-print(graph)
 
 def dijkstra(start):
     q = [] # 우선순위 큐
