@@ -5,8 +5,9 @@ input = sys.stdin.readline
 n = int(input())
 arr = [[0] * n for _ in range(n)] # 행렬 초기화
 
+# 입력
 for i in range(n):
-        arr[i] = list(map(int, input().split()))
+    arr[i] = list(map(int, input().split()))
 
 def pooling(size, x, y):
     mid = size // 2
