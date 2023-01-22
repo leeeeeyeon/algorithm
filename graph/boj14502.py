@@ -10,7 +10,7 @@ board = [[0 for _ in range(m)] for _ in range(n)]
 for i in range(n):
     board[i] = list(map(int, input().split()))
 
-def dfs():
+def bfs():
     q = deque()
     temp = copy.deepcopy(board)
     for i in range(n):
@@ -43,7 +43,7 @@ def dfs():
 
 def make_wall(count):
     if count == 3:
-        dfs()
+        bfs()
         return
 
     for i in range(n):
