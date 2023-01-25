@@ -40,10 +40,40 @@ def bfs():
     global result
     result = max(count, result)
 
+def dfs():
+    stack = []
+    temp = copy.deepcopy(board)
+    for i in range(n):
+        for j in range(m):
+            if temp[i][j] == 2:
+                stack.append((i, j))
+                
+    while stack:
+        cur = stack.pop()
+        dx = [-1, 0, 1, 0]
+        dy = [0, -1, 0, 1]
+
+        for i in range(4):
+            nx, ny = cur[0] + dx[i], cur[1] + dy[i]
+
+            if nx<0 or nx>=n or ny<0 or ny>=m or temp[nx][ny] != 0:
+                continue
+            temp[nx][ny] = 2
+            stack.append((nx, ny))
+
+    count = 0
+    for i in range(n):
+        for j in range(m):
+            if temp[i][j] == 0:
+                count += 1
+
+    global result
+    result = max(count, result)
 
 def make_wall(count):
     if count == 3:
-        bfs()
+        # bfs()
+        dfs()
         return
 
     for i in range(n):
