@@ -32,7 +32,7 @@ for _ in range(t):
         else:
             cnt += 1
 
-    print(edges)
+
     print(cnt)
 
 # len(set(parent))-1을 출력하면 '틀렸습니다'가 뜨고
