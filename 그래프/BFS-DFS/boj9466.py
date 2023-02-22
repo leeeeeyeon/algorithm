@@ -35,4 +35,9 @@ for _ in range(t):
             dfs(i)
 
     print(n-len(result))
+
+# 피드백
+# cycle, result 두 개의 리스트가 필요하다
+# cycle - 각 번호마다 해당 번호를 루트로 사이클이 형성되는지 확인한다
+# result - 사이클에 있는 번호들을 저장한다
  
