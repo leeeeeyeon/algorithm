@@ -1,7 +1,7 @@
 def solution(bridge_length, weight, truck_weights):
     answer = 0
     bridge = [0] * bridge_length
-    total = sum(bridge)
+    total = 0
     
     while bridge:
         answer += 1
